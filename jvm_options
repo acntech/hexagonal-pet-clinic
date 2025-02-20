@@ -1,0 +1,4 @@
+-Xverify:none
+-Dlogback.debug=true
+-DLOG_PATH=./log
+-jar ./infra/target/hexagonal-pet-clinic-service.jar

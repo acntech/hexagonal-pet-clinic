@@ -1,0 +1,33 @@
+# Enforce LF line endings for Java source code
+*.java text eol=lf
+
+# Enforce LF line endings for configuration files
+*.xml text eol=lf
+*.properties text eol=lf
+*.gradle text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Enforce LF line endings for shell scripts
+*.sh text eol=lf
+
+# Enforce CRLF line endings for Windows batch files
+*.bat text eol=crlf
+
+# Treat binary files as-is (no line-ending conversion or diffing)
+*.png binary
+*.jpg binary
+*.gif binary
+*.jar binary
+*.class binary
+*.docx binary
+
+# Prevent Git from generating diffs for binary files
+*.png -diff
+*.jpg -diff
+*.gif -diff
+*.jar -diff
+*.class -diff
+*.docx -diff

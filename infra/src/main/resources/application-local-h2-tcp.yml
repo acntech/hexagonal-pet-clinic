@@ -1,0 +1,53 @@
+spring:
+
+  datasource:
+    driver-class-name: org.h2.Driver
+
+    # In-mem H2 database with a TCP listener allowing remote connections
+    url: jdbc:h2:tcp://localhost:${spring.h2.server.tcp.port}/mem:${application.datasource.name};DB_CLOSE_DELAY=-1
+
+    username: sa
+    password: ~
+
+  h2:
+    server:
+      enabled: true
+      tcp:
+        port: 9092
+    console:
+      enabled: false # Enables the H2 console at /h2-console
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true  # Logs SQL statements
+    hibernate:
+      ddl-auto: none  # or use "create-drop" if you want tables to be dropped on shutdown
+      properties:
+        javax.persistence.jdbc.blob: true
+        hibernate.format_sql: true # Pretty-print SQL logs (useful with show_sql enabled)
+        hibernate.use_sql_comments: true # Add comments to SQL for better traceability
+        hibernate.generate_statistics: false # Disable for production; enable for performance debugging
+
+#  sql:
+#    init:
+#      mode: always  # Ensures SQL scripts run even if an embedded database is not detected
+
+#--------------------
+# Logging
+#--------------------
+logging:
+  stdout-appender-threshold-level: TRACE
+  trace-appender-threshold-level: TRACE
+  level:
+    root: INFO
+    no.acntech: TRACE
+    org.springframework: INFO
+    org.springdoc: INFO
+    org.hibernate: INFO
+    # Set to DEBUG for logging SQL queries
+    org.hibernate.SQL: DEBUG
+    # Set to TRACE for logging prepared statement parameters
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.stat: DEBUG
+    org.hibernate.SQL_SLOW: DEBUG

@@ -1,0 +1,40 @@
+### Create a new pet
+POST http://localhost:8080/pets
+Content-Type: application/json
+
+{
+  "name": "Blackie",
+  "type": "Dog",
+  "breed": "Gordon Setter",
+  "gender": "Male",
+  "birthDate": "2020-05-20",
+  "description": "Wild and playful",
+  "ownerId": 1
+}
+
+> {%
+  client.test("Response is 201 Created", function() {
+    client.assert(response.status === 201, "Expected 201, but got " + response.status);
+  });
+%}
+
+### Get a single pet by Identifier
+GET http://localhost:8080/pets/identifier/2020061511234568
+
+### Get a single pet by Identifier
+GET http://localhost:8080/pets/identifier/2018092212345670
+
+### Get a single pet by Identifier
+GET http://localhost:8080/pets/identifier/2019111013456781
+
+### Get a single pet by ID
+GET http://localhost:8080/pets/1
+
+### Get a single pet by ID
+GET http://localhost:8080/pets/2
+
+### Get a single pet by ID
+GET http://localhost:8080/pets/3
+
+### Get all pets
+GET http://localhost:8080/pets
