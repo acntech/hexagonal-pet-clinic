@@ -19,6 +19,6 @@ import no.acntech.hexapetclinic.domain.model.Visit;
  */
 public interface VisitRepository extends BaseRepository<Visit, Long> {
 
-  List<Visit> findByPetId(@NonNull PetIdentifier petIdentifier);
+  List<Visit> findByPetIdentifier(@NonNull PetIdentifier petIdentifier);
 
 }

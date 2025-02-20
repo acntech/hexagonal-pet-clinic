@@ -88,12 +88,6 @@ public class PetJpaEntity extends MutableJpaEntity implements Pet {
   }
 
   @Override
-  public Pet changeType(@NonNull PetType type) {
-    this.type = type;
-    return this;
-  }
-
-  @Override
   public Pet changeBirthDate(@NonNull LocalDate birthDate) {
     this.birthDate = birthDate;
     return this;

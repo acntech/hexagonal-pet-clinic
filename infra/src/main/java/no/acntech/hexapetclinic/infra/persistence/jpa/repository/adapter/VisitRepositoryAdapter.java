@@ -38,7 +38,7 @@ public class VisitRepositoryAdapter
   }
 
   @Override
-  public List<Visit> findByPetId(@NonNull PetIdentifier petIdentifier) {
+  public List<Visit> findByPetIdentifier(@NonNull PetIdentifier petIdentifier) {
     return jpaRepository.findByPetId(petIdentifier)
         .stream()
         .map(entity -> (Visit) entity) // Cast each VisitEntity to Visit
