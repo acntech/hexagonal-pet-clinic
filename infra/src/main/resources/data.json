@@ -1,0 +1,113 @@
+[
+  {
+    "collection": "owners",
+    "documents": [
+      {
+        "_id": 1,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "address": "123 Maple Street",
+        "city": "Springfield",
+        "email": "john.doe@email.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "telephone": "555-1234"
+      },
+      {
+        "_id": 2,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "address": "456 Oak Avenue",
+        "city": "Greendale",
+        "email": "jane.smith@email.com",
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "telephone": "555-5678"
+      },
+      {
+        "_id": 3,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "address": "789 Pine Road",
+        "city": "Rivertown",
+        "email": "alice.johnson@email.com",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "telephone": "555-9876"
+      }
+    ]
+  },
+  {
+    "collection": "pets",
+    "documents": [
+      {
+        "_id": 101,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "birthDate": { "$date": "2020-06-15T00:00:00Z" },
+        "description": "Very playful",
+        "name": "Buddy",
+        "identifier": "2020061511234568",
+        "type": "DOG",
+        "gender": "MALE",
+        "breed": "Golden Retriever",
+        "owner": { "$ref": "owners", "$id": 1 }
+      },
+      {
+        "_id": 102,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "birthDate": { "$date": "2018-09-22T00:00:00Z" },
+        "description": "Persian cat, loves sleeping",
+        "name": "Mittens",
+        "identifier": "2018092212345670",
+        "type": "CAT",
+        "gender": "FEMALE",
+        "breed": "Persian",
+        "owner": { "$ref": "owners", "$id": 2 }
+      },
+      {
+        "_id": 103,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "birthDate": { "$date": "2019-11-10T00:00:00Z" },
+        "description": "A curious and friendly rabbit",
+        "name": "Hopper",
+        "identifier": "2019111013456781",
+        "type": "RABBIT",
+        "gender": "MALE",
+        "breed": "Netherland Dwarf",
+        "owner": { "$ref": "owners", "$id": 3 }
+      }
+    ]
+  },
+  {
+    "collection": "visits",
+    "documents": [
+      {
+        "_id": 201,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "description": "Routine check-up",
+        "time": { "$date": "2025-02-16T12:30:00Z" },
+        "pet": { "$ref": "pets", "$id": 101 }
+      },
+      {
+        "_id": 202,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "description": "Vaccination",
+        "time": { "$date": "2025-02-16T12:45:00Z" },
+        "pet": { "$ref": "pets", "$id": 102 }
+      },
+      {
+        "_id": 203,
+        "createdAt": { "$date": "2025-02-16T12:00:00Z" },
+        "updatedAt": { "$date": "2025-02-16T12:00:00Z" },
+        "description": "Dental cleaning",
+        "time": { "$date": "2025-02-16T13:00:00Z" },
+        "pet": { "$ref": "pets", "$id": 103 }
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+spring:
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+
+  jpa:
+    enabled: false
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/${application.datasource.name}
+      database: ${application.datasource.name}
+      auto-index-creation: true
+
+#--------------------
+# Logging
+#--------------------
+logging:
+  level:
+    root: INFO
+    no.acntech: TRACE
+    org.springframework: INFO
+    org.springdoc: INFO
+    org.mongodb.driver: DEBUG # Enable MongoDB query logging

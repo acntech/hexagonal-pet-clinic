@@ -64,7 +64,7 @@
     <appender-ref ref="ERROR_FILE_APPENDER"/>
   </root>
 
-  <springProfile name="local-h2, local-h2-tcp">
+  <springProfile name="local-mongodb">
 
     <logger name="no.acntech" additivity="false">
       <appender-ref ref="STDOUT_APPENDER"/>

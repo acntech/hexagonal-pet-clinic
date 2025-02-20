@@ -29,8 +29,6 @@ public interface Pet extends Entity<Long> {
 
   Pet changeName(@NonNull String name);
 
-  Pet changeType(@NonNull PetType type);
-
   Pet changeBirthDate(@NonNull LocalDate birthDate);
 
   Pet changeDescription(@NonNull String description);

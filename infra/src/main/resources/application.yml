@@ -6,7 +6,7 @@ debug: false
 application:
 
   datasource:
-    name: petclinicdb
+    name: hexapetclinic
 
   spring:
 
@@ -17,6 +17,9 @@ application:
 
 server:
   port: 8080
+
+  tomcat:
+    jvm-options: "--add-opens=java.base/java.time=ALL-UNNAMED"
 
 spring:
 
